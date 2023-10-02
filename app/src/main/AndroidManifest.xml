@@ -13,6 +13,7 @@
         android:theme="@style/Theme.ResponsiveApp">
         <activity
             android:name=".BeerListActivity"
+            android:exported="true"
             android:label="@string/title_beer_list"
             android:theme="@style/Theme.ResponsiveApp">
             <intent-filter>

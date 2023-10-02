@@ -48,7 +48,7 @@ class BeerListViewModel(
     class BeerListViewModelFactory(
         private val beerRepository: BeerRepository
     ) : ViewModelProvider.Factory {
-        override fun <T : ViewModel?> create(modelClass: Class<T>) =
+        override fun <T : ViewModel> create(modelClass: Class<T>): T =
             BeerListViewModel(beerRepository) as T
     }
 }
