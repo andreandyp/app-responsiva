@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/beer_compose_nav_graph"
+    app:startDestination="@id/beerComposeListFragment">
+
+    <fragment
+        android:id="@+id/beerComposeListFragment"
+        android:name="com.andreandyp.responsiveapp.compose1.BeerComposeListFragment"
+        android:label="@string/fragment_compose_title">
+        <action
+            android:id="@+id/see_beer_details"
+            app:destination="@id/beerComposeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/beerComposeDetailFragment"
+        android:name="com.andreandyp.responsiveapp.compose1.BeerComposeDetailFragment"
+        android:label="BeerComposeDetailFragment" >
+        <argument
+            android:name="beer"
+            app:argType="com.andreandyp.responsiveapp.repository.models.Beer" />
+    </fragment>
+</navigation>

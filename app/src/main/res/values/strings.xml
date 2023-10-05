@@ -11,4 +11,8 @@
     <string name="get_cache_action">Get from cache</string>
     <string name="empty_db">No beer data available. Connect to the internet to get new data</string>
     <string name="loading">Loading…</string>
+    <string name="no_internet_data">No beer data available.</string>
+    <string name="old_option">Original app</string>
+    <string name="fragment_compose_option">Fragments and Compose Activity</string>
+    <string name="fragment_compose_title">Beers - Fragments and Compose</string>
 </resources>
