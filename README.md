@@ -1,7 +1,14 @@
 # App responsiva
 
-La app utiliza MVVM, LiveData, Navigation, Room, ViewModel, Material Components, ConstraintLayout, SwipeRefreshLayout y RecyclerView.
+Una app para mi artículo [De qualifiers a Window size classes: (re) implementando una app responsiva en Android](https://medium.com/@andreandyp/de-qualifiers-a-window-size-classes-re-implementando-una-app-responsiva-en-android-4fb94dbf0a6b).
 
-En cuanto a bibliotecas externas, utiliza Retrofit, Moshi y Picasso para traer datos e imágenes de forma asíncrona.
+## Estructura
 
-App probada en un Pixel y una Nexus 7 virtuales (nivel de API 29) y en un Moto G6 físico (nivel de API 28)
+Cada commit representa un avance en la mejora de la app:
+
+1. `Original code` - Código original.
+2. `Step 0` - Actualizar las versiones de AGP, el compileSdk, Gradle, etc.
+3. `Step 1` - Añadir Compose en fragmentos.
+4. `Step 2` - Compose y Window Size Classes.
+
+Es posible navegar entre commits o ejecutar la app y ver cada UI desde la pantalla principal.

@@ -1,6 +1,7 @@
 package com.andreandyp.responsiveapp.ui.utils
 
 import android.content.res.Configuration
+import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import com.andreandyp.responsiveapp.repository.models.Beer
 
@@ -19,3 +20,9 @@ object ComposePreviews {
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 annotation class AllThemesPreviews
+
+@Preview(device = Devices.PIXEL_C)
+annotation class PixelTabletPreview
+
+@Preview(device = Devices.PIXEL_4)
+annotation class PixelPhonePreview

@@ -28,6 +28,10 @@
             android:name=".compose1.BeerComposeFragmentsActivity"
             android:exported="false"
             android:theme="@style/Theme.ResponsiveApp" />
+        <activity
+            android:name=".compose2.BeerComposeActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ResponsiveApp" />
     </application>
 
 </manifest>

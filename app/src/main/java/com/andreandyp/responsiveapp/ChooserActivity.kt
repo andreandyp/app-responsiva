@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.andreandyp.responsiveapp.compose1.BeerComposeFragmentsActivity
+import com.andreandyp.responsiveapp.compose2.BeerComposeActivity
 import com.andreandyp.responsiveapp.ui.theme.ResponsiveAppTheme
 
 class ChooserActivity : ComponentActivity() {
@@ -45,6 +46,13 @@ class ChooserActivity : ComponentActivity() {
                             startActivity(intent)
                         }) {
                             Text(stringResource(id = R.string.fragment_compose_option))
+                        }
+
+                        Button(onClick = {
+                            val intent = Intent(context, BeerComposeActivity::class.java)
+                            startActivity(intent)
+                        }) {
+                            Text(stringResource(id = R.string.new_compose_option))
                         }
                     }
                 }

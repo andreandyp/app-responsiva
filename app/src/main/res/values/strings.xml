@@ -15,4 +15,6 @@
     <string name="old_option">Original app</string>
     <string name="fragment_compose_option">Fragments and Compose Activity</string>
     <string name="fragment_compose_title">Beers - Fragments and Compose</string>
+    <string name="new_compose_option">Compose and Window Size Classes Activity</string>
+    <string name="new_compose_title">Beers - Compose and WSC</string>
 </resources>

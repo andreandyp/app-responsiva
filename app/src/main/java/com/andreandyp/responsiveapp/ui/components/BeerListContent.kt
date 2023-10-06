@@ -92,7 +92,7 @@ private fun BeerListContentSuccessPreview() {
     ResponsiveAppTheme {
         Surface {
             BeerListContent(
-                state = BeerListState.Success(beers = List(3) { ComposePreviews.previewBeer }),
+                state = BeerListState.Success(beers = List(6) { ComposePreviews.previewBeer }),
                 onClickBeer = {},
                 onScrolledToEnd = {},
                 onRefresh = {},
