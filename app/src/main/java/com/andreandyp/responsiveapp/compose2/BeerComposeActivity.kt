@@ -16,6 +16,7 @@ import com.andreandyp.responsiveapp.repository.BeerRepository
 import com.andreandyp.responsiveapp.ui.screens.BeersScreen
 import com.andreandyp.responsiveapp.ui.theme.ResponsiveAppTheme
 import com.andreandyp.responsiveapp.viewmodels.BeerListViewModel
+import com.google.accompanist.adaptive.calculateDisplayFeatures
 
 @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
 class BeerComposeActivity : ComponentActivity() {
@@ -28,6 +29,7 @@ class BeerComposeActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val windowSizeClass = calculateWindowSizeClass(activity = this)
+            val displayFeatures = calculateDisplayFeatures(activity = this)
             val isExpanded = windowSizeClass.widthSizeClass == WindowWidthSizeClass.Expanded
 
             ResponsiveAppTheme {
@@ -35,7 +37,7 @@ class BeerComposeActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    BeersScreen(isExpanded, viewModel)
+                    BeersScreen(isExpanded, displayFeatures, viewModel)
                 }
             }
         }

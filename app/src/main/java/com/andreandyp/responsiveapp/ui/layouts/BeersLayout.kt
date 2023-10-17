@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import androidx.window.layout.DisplayFeature
 import com.andreandyp.responsiveapp.repository.models.Beer
 import com.andreandyp.responsiveapp.ui.components.BeersContent
 import com.andreandyp.responsiveapp.ui.components.BeersExpandedContent
@@ -23,6 +24,7 @@ import com.andreandyp.responsiveapp.ui.utils.PixelTabletPreview
 fun BeersLayout(
     state: BeerListState,
     isExpanded: Boolean,
+    displayFeatures: List<DisplayFeature>,
     snackbarHostState: SnackbarHostState,
     navController: NavHostController,
     onClickBeer: (Beer?) -> Unit,
@@ -43,6 +45,7 @@ fun BeersLayout(
         if (isExpanded) {
             BeersExpandedContent(
                 state = state,
+                displayFeatures = displayFeatures,
                 onClickBeer = onClickBeer,
                 onScrolledToEnd = onScrolledToEnd,
                 onRefresh = onRefresh,
@@ -71,6 +74,7 @@ private fun BeersLayoutPhoneNoBeerPreview() {
             BeersLayout(
                 state = BeerListState.Success(beers = beers),
                 isExpanded = false,
+                displayFeatures = emptyList(),
                 snackbarHostState = SnackbarHostState(),
                 navController = rememberNavController(),
                 onClickBeer = {},
@@ -91,6 +95,7 @@ private fun BeersLayoutTabletNoBeerPreview() {
             BeersLayout(
                 state = BeerListState.Success(beers = beers),
                 isExpanded = true,
+                displayFeatures = emptyList(),
                 snackbarHostState = SnackbarHostState(),
                 navController = rememberNavController(),
                 onClickBeer = {},
@@ -112,6 +117,7 @@ private fun BeersLayoutPhoneBeerPreview() {
             BeersLayout(
                 state = BeerListState.Success(beerSelected, beers + beerSelected + beers),
                 isExpanded = false,
+                displayFeatures = emptyList(),
                 snackbarHostState = SnackbarHostState(),
                 navController = rememberNavController(),
                 onClickBeer = {},
@@ -133,6 +139,7 @@ private fun BeersLayoutTabletBeerPreview() {
             BeersLayout(
                 state = BeerListState.Success(beerSelected, beers + beerSelected + beers),
                 isExpanded = true,
+                displayFeatures = emptyList(),
                 snackbarHostState = SnackbarHostState(),
                 navController = rememberNavController(),
                 onClickBeer = {},

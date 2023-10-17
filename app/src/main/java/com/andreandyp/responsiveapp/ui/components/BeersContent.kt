@@ -21,7 +21,9 @@ fun BeersContent(
 ) {
     LaunchedEffect(key1 = state) {
         if (state is BeerListState.Success && state.selectedBeer != null) {
-            navController.navigate(BeerDestinations.BEER_DETAIL_EMPTY)
+            navController.navigate(BeerDestinations.BEER_DETAIL_EMPTY) {
+                launchSingleTop = true
+            }
         }
     }
 

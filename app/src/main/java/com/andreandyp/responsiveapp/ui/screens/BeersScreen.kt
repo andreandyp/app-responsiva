@@ -11,6 +11,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.window.layout.DisplayFeature
 import com.andreandyp.responsiveapp.R
 import com.andreandyp.responsiveapp.ui.layouts.BeersLayout
 import com.andreandyp.responsiveapp.ui.navigation.BeerDestinations
@@ -20,6 +21,7 @@ import com.andreandyp.responsiveapp.viewmodels.BeerListViewModel
 @Composable
 fun BeersScreen(
     isExpanded: Boolean,
+    displayFeatures: List<DisplayFeature>,
     viewModel: BeerListViewModel
 ) {
     val state by viewModel.state.observeAsState(initial = BeerListState.Initial)
@@ -50,6 +52,7 @@ fun BeersScreen(
     BeersLayout(
         state = state,
         isExpanded = isExpanded,
+        displayFeatures = displayFeatures,
         snackbarHostState = snackbarHostState,
         navController = navController,
         onClickBeer = viewModel::onSelectedBeer,
