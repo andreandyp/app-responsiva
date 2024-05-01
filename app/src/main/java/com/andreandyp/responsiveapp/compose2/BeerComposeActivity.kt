@@ -1,9 +1,13 @@
 package com.andreandyp.responsiveapp.compose2
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -11,6 +15,7 @@ import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSiz
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.toArgb
 import com.andreandyp.responsiveapp.database.BeerDatabase
 import com.andreandyp.responsiveapp.repository.BeerRepository
 import com.andreandyp.responsiveapp.ui.screens.BeersScreen
@@ -28,6 +33,16 @@ class BeerComposeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            enableEdgeToEdge(
+                statusBarStyle = SystemBarStyle.dark(
+                    if (isSystemInDarkTheme()) {
+                        Color.TRANSPARENT
+                    } else {
+                        MaterialTheme.colors.primary.toArgb()
+                    }
+                )
+            )
+
             val windowSizeClass = calculateWindowSizeClass(activity = this)
             val displayFeatures = calculateDisplayFeatures(activity = this)
             val isExpanded = windowSizeClass.widthSizeClass == WindowWidthSizeClass.Expanded

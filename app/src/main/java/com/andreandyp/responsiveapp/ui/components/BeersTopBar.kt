@@ -1,5 +1,7 @@
 package com.andreandyp.responsiveapp.ui.components
 
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.statusBars
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Text
@@ -20,6 +22,7 @@ fun BeersTopBar(
     val textTitle = selectedBeer?.name ?: stringResource(id = R.string.new_compose_title)
     if (showBackIcon) {
         TopAppBar(
+            windowInsets = WindowInsets.statusBars,
             title = { Text(text = textTitle) },
             navigationIcon = {
                 IconButton(onClick = onClickNavIcon) {
@@ -28,6 +31,6 @@ fun BeersTopBar(
             },
         )
     } else {
-        TopAppBar(title = { Text(text = textTitle) })
+        TopAppBar(windowInsets = WindowInsets.statusBars, title = { Text(text = textTitle) })
     }
 }

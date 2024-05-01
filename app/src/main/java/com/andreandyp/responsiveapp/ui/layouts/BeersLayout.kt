@@ -1,5 +1,6 @@
 package com.andreandyp.responsiveapp.ui.layouts
 
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
 import androidx.compose.material.SnackbarHost
@@ -40,7 +41,12 @@ fun BeersLayout(
                 onClickNavIcon = { navController.navigateUp() },
             )
         },
-        snackbarHost = { SnackbarHost(snackbarHostState) },
+        snackbarHost = {
+            SnackbarHost(
+                snackbarHostState,
+                modifier = Modifier.navigationBarsPadding(),
+            )
+        },
     ) { paddingValues ->
         if (isExpanded) {
             BeersExpandedContent(
